@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/search.css">
+</head>
+<body>
+       <center><h1>Search Drink</h1></center>
+       <div class="container">
+        <form action="/search" method="post">
+            <label for="Drink_Name">Enter Drink Name</label>
+            <input type="text" name="drinkName">
+            <input type="submit" value="Search">
+        </form>
+       </div>
+       <div class="container3">
+        <% if (locals.status===0){ %>
+            <h2>Please enter the drink name</h2>
+            <% }  else{ %>
+                    <%if(locals.name) {%>
+                        <h2><%=name%></h2>
+                        <h4><%=type%></h4>
+                        <ul>
+                            <% for (var i=0;i<ingredients.length;i++) {%>
+                                <li><%=ingredients[i]%></li>
+                            <%}%>
+                        </ul>
+                        <p><%=instruction%></p>
+                    <%} else{%>
+                        <h2>The Drink does not exist</h2>
+                    <%}%>
+            
+            <% }%>
+                 
+       </div>
+       <%- include("partials/footer.ejs")%>
+</body>
+</html>

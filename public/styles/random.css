@@ -1,0 +1,82 @@
+html{
+    background-color: #EEEEEE;
+}
+h1,footer{
+    color:#222831;
+    font-family: "Playwrite IN", serif;
+}
+html{
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.drinkName{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    right: 5%;
+}
+.drinkName h2{
+    text-align: center;
+}
+.instruction h4{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.generatebtn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.generatebtn a{
+    text-decoration: none;
+    padding: 2rem;
+    background-color:#00ADB5;
+    border: 1px solid #00ADB5;
+    border-radius: 10px;
+    font-size: 1rem;
+    color:#FDCB58;
+    font-weight: bold;
+    transition: color 0.2s,background-color 0.2s,border-color 0.2s;
+}
+.generatebtn a:hover{
+    color:#00ADB5;
+    background-color: #FDCB58;
+    border-color: #FDCB58;
+}
+
+.container2{
+    position: relative;
+    margin-top: 3rem;
+    width: 100%;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Playwrite IN", serif;
+}
+@media(max-width:1100px){
+    .container,.drinkName{
+        width: 100%;
+        left: 0px;
+        right: 0px;
+    }
+    
+}
+

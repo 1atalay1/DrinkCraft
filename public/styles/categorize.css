@@ -1,0 +1,117 @@
+html{
+    background-color: #EEEEEE;
+}
+h1,footer{
+    color:#222831;
+    font-family: "Playwrite IN", serif;
+}
+html{
+    overflow-x: hidden;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f8f9fa;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown:hover {
+    border-color: #007bff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+.menu{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+    
+}
+.entry{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: blue;
+    border-radius: 8px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black; 
+}
+
+th {
+    background-color: #f2f2f2; 
+}
+
+
+
+tbody tr{
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+tbody tr:hover{
+    background-color: #007bff;
+    
+}
+.container2{
+    position: relative;
+    margin-top: 3rem;
+    width: 100%;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Playwrite IN", serif;
+}

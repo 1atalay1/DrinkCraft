@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/random.css">
+</head>
+<body>
+        <center><h1>Random Drink Generator</h1></center>
+        <div class="container">
+            <div class="drinkName">
+                <h2><%=name%></h2>
+                <h4><%=type%></h4>
+            </div>
+            <div class="ingredients">
+                <center><h3>Ingredients</h3></center>
+                <ul>
+                    <% for(var i=0;i<ingredients.length;i++) {%>
+                            <li><%=ingredients[i]%></li>
+                        <%}%>
+                </ul>
+            </div>
+            <div class="instruction">
+                    <center><h3>Instruction</h3></center>
+                    <h4><%=instruction%></h4>
+            </div>
+        </div>
+        <div class="generatebtn">
+            <a href="/generate">Generate Drink</a>
+        </div>
+
+            <%- include ("partials/footer.ejs")%>
+
+
+</body>
+</html>

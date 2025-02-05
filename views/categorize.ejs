@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/categorize.css">
+</head>
+<body>
+       <center><h1>Find Your Taste</h1></center>
+       <div class="container">
+        <form action="/query" method="post">
+            
+            <select name="categories" class="dropdown">
+                <option value="Categories">Categories</option>
+                <% for (var i=0; i < category.length; i++) { %>
+                    <option value="<%=category[i]%>"><%=category[i]%></option>    
+                <% } %>
+            </select>
+            
+            <select name="ingredients" class="dropdown">
+                <option value="ingredients">Ingredients</option>
+                <% for (var i=0; i < ingredients.length; i++) { %>
+                    <option value="<%=ingredients[i]%>"><%=ingredients[i]%></option>
+                <% } %>
+            </select>
+    
+            <select name="alcohol" class="dropdown">
+                <option value="alcohol">Liquor Rate</option>
+                <% for (var i=0; i < alcohol.length; i++) { %>
+                    <option value="<%=alcohol[i]%>"><%=alcohol[i]%></option>
+                <% } %>
+            </select>
+    
+            <button type="submit" class="submit-btn">Search</button>
+        </form>
+    </div>
+
+
+        <% if (locals.data) {%>
+                <% if(data.length>0) {%>
+                    <div class="menu">
+                        <center> <h2>Drink List</h2>
+                         <hr></center>
+                        
+                         <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Drink Name</th>
+                                    <th>Category</th>
+                                    <th>Ingredients</th>
+                                    <th>Alcohol</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i = 0; i < data.length; i++) { %>
+                                    
+                                        <tr onclick="document.getElementById('form<%=i%>').submit();">
+                                            <form action="/requset" method="POST" id="form<%=i%>">
+                                                <input type="hidden" name="drinkName" value="<%= data[i] %>">
+                                                <input type="hidden" name="category" value="<%= i_category %>">
+                                                <input type="hidden" name="ingredients" value="<%= i_ingredients %>">
+                                                <input type="hidden" name="alcohol" value="<%= i_alcohol %>">
+                                                <td><p><%= data[i] %></p></td>
+                                                <td><p><%=i_category%></p></td>
+                                                <td><p><%=i_ingredients%></p></td>
+                                                <td><p><%=i_alcohol%></p></td>
+
+                                            </form>
+                                        </tr>
+                                    
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                <%} else {%>
+                    <center><h2>Your preference could not be found</h2></center>    
+                <%}%>
+        <% }%>
+
+        <%-include("partials/footer.ejs")%>;
+        
+</body>
+</html>
